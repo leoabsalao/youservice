@@ -1,0 +1,102 @@
+<header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50 transition-all duration-300">
+  <div class="container mx-auto px-4 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+
+      <!-- Logo -->
+      <a routerLink="/" class="flex items-center space-x-2">
+        <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform">
+          <mat-icon class="text-white">handyman</mat-icon>
+        </div>
+        <span class="text-2xl font-display font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
+          YouService
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center space-x-8">
+        <a routerLink="/servicos"
+           routerLinkActive="text-primary-600 font-semibold"
+           class="text-gray-700 hover:text-primary-600 transition-colors font-medium">
+          Serviços
+        </a>
+        <a routerLink="/profissionais"
+           routerLinkActive="text-primary-600 font-semibold"
+           class="text-gray-700 hover:text-primary-600 transition-colors font-medium">
+          Seja um Profissional
+        </a>
+        <a routerLink="/como-funciona"
+           routerLinkActive="text-primary-600 font-semibold"
+           class="text-gray-700 hover:text-primary-600 transition-colors font-medium">
+          Como Funciona
+        </a>
+        <a routerLink="/contato"
+           routerLinkActive="text-primary-600 font-semibold"
+           class="text-gray-700 hover:text-primary-600 transition-colors font-medium">
+          Contato
+        </a>
+      </nav>
+
+      <!-- CTA Buttons -->
+      <div class="hidden lg:flex items-center space-x-4">
+        <button mat-stroked-button class="!border-primary-500 !text-primary-600 hover:!bg-primary-50">
+          Entrar
+        </button>
+        <button mat-raised-button class="!bg-primary-500 !text-blue hover:!bg-primary-600 !shadow-lg">
+          Cadastrar
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        mat-icon-button
+        class="lg:hidden"
+        (click)="toggleMenu()">
+        <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div
+      class="lg:hidden overflow-hidden transition-all duration-300 ease-in-out"
+      [class.max-h-0]="!menuOpen"
+      [class.max-h-screen]="menuOpen">
+      <nav class="py-4 space-y-3 border-t border-gray-200">
+        <a routerLink="/servicos"
+           routerLinkActive="text-primary-600 font-semibold bg-primary-50"
+           (click)="toggleMenu()"
+           class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+          Serviços
+        </a>
+        <a routerLink="/profissionais"
+           routerLinkActive="text-primary-600 font-semibold bg-primary-50"
+           (click)="toggleMenu()"
+           class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+          Seja um Profissional
+        </a>
+        <a routerLink="/como-funciona"
+           routerLinkActive="text-primary-600 font-semibold bg-primary-50"
+           (click)="toggleMenu()"
+           class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+          Como Funciona
+        </a>
+        <a routerLink="/contato"
+           routerLinkActive="text-primary-600 font-semibold bg-primary-50"
+           (click)="toggleMenu()"
+           class="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+          Contato
+        </a>
+        <div class="pt-4 space-y-2">
+          <button mat-stroked-button class="w-full !border-primary-500 !text-primary-600">
+            Entrar
+          </button>
+          <button mat-raised-button class="w-full !bg-primary-500 !text-white">
+            Cadastrar
+          </button>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Spacer para compensar o header fixo -->
+<div class="h-20"></div>

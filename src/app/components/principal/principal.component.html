@@ -1,0 +1,116 @@
+<section class="relative bg-gradient-to-br from-primary-50 via-orange-50 to-amber-50 overflow-hidden">
+  <!-- Decorative elements -->
+  <div class="absolute inset-0 opacity-30">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+    <div class="absolute top-40 right-10 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+    <div class="absolute -bottom-20 left-1/2 w-72 h-72 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+  </div>
+
+  <div class="container mx-auto px-4 lg:px-8 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-12 items-center py-16 lg:py-24">
+
+      <!-- Left Content -->
+      <div class="space-y-8 animate-fade-in-up">
+        <div class="space-y-4">
+          <h1 class="text-4xl lg:text-6xl font-display font-bold text-gray-900 leading-tight">
+            Encontre o
+            <span class="bg-gradient-to-r from-primary-600 to-orange-500 bg-clip-text text-transparent">
+              profissional perfeito
+            </span>
+            para você
+          </h1>
+          <p class="text-lg lg:text-xl text-gray-600 leading-relaxed">
+            Conectamos você com milhares de profissionais qualificados em mais de 500 categorias de serviços.
+          </p>
+        </div>
+
+        <!-- Search Box -->
+        <div class="bg-white rounded-2xl shadow-strong p-6 space-y-4 transform hover:scale-105 transition-transform duration-300">
+          <div class="flex flex-col sm:flex-row gap-3">
+            <div class="flex-1">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-icon matPrefix class="text-primary-500">search</mat-icon>
+                <input
+                  matInput
+                  [(ngModel)]="searchQuery"
+                  (keyup.enter)="onSearch()"
+                  placeholder="Qual serviço você precisa?"
+                  class="text-lg">
+              </mat-form-field>
+            </div>
+            <button
+              mat-raised-button
+              (click)="onSearch()"
+              class="!bg-primary-500 !text-blue hover:!bg-primary-600 !h-14 !px-8 !text-lg !font-semibold !shadow-lg">
+              Buscar
+              <mat-icon class="ml-2">arrow_forward</mat-icon>
+            </button>
+          </div>
+
+          <!-- Popular Services -->
+          <div class="pt-2">
+            <p class="text-sm text-gray-500 mb-2">Serviços populares:</p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                *ngFor="let service of popularServices"
+                class="px-3 py-1.5 bg-gray-100 hover:bg-primary-50 text-gray-700 hover:text-primary-600 rounded-full text-sm cursor-pointer transition-colors">
+                {{ service }}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-6 pt-4">
+          <div class="text-center">
+            <div class="text-3xl lg:text-4xl font-bold text-primary-600">500+</div>
+            <div class="text-sm text-gray-600 mt-1">Categorias</div>
+          </div>
+          <div class="text-center border-l border-r border-gray-200">
+            <div class="text-3xl lg:text-4xl font-bold text-primary-600">1M+</div>
+            <div class="text-sm text-gray-600 mt-1">Profissionais</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl lg:text-4xl font-bold text-primary-600">10M+</div>
+            <div class="text-sm text-gray-600 mt-1">Serviços</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="relative hidden lg:block animate-fade-in">
+        <div class="relative z-10">
+          <img
+            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800"
+            alt="Profissionais trabalhando"
+            class="rounded-3xl shadow-strong w-full h-auto object-cover">
+        </div>
+
+        <!-- Floating Cards -->
+        <div class="absolute -top-6 -left-6 bg-white rounded-2xl shadow-medium p-4 animate-float">
+          <div class="flex items-center space-x-3">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+              <mat-icon class="text-green-600">verified</mat-icon>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">Profissionais</div>
+              <div class="text-sm text-gray-500">Verificados</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-medium p-4 animate-float animation-delay-2000">
+          <div class="flex items-center space-x-3">
+            <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+              <mat-icon class="text-yellow-600">star</mat-icon>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">4.9/5.0</div>
+              <div class="text-sm text-gray-500">Avaliação</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
